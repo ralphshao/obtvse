@@ -18,6 +18,12 @@
       <% if CONFIG['twitter'] %>
         <li><%= link_to '@' + CONFIG['twitter'], 'http://twitter.com/' + CONFIG['twitter'] %></li>
       <% end %>
+      <% if CONFIG['facebook'] %>
+        <li><%= link_to 'facebook', 'http://facebook.com/' + CONFIG['facebook'] %></li>
+      <% end %>
+      <% if CONFIG['linkedin'] %>
+        <li><%= link_to 'linkedin', 'http://linkedin.com/in/' + CONFIG['linkedin'] %></li>
+      <% end %>
       <% if CONFIG['github'] %>
         <li><%= link_to 'github', 'https://github.com/' + CONFIG['github'] %></li>
       <% end %>

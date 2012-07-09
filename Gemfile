@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '~> 3'
 
 # Extention libraries
-gem 'thin', '~> 1'
+# gem 'thin', '~> 1'
+gem 'unicorn'
 
 # Rendering engines and vendor libraries
 gem 'jquery-rails', '~> 2'
@@ -17,12 +18,14 @@ gem 'kaminari', '~> 0.13'
 group :production do
   # gem 'newrelic_rpm', '~> 3'
   # gem 'dalli', '~> 1'
-  gem 'pg', '~> 0.13'
+  # gem 'pg', '~> 0.13'
+  gem 'mysql2'
+  gem 'therubyracer'
 end
 
 group :development do
   # gem 'heroku', '~> 2'
-  # gem 'capistrano', '~> 2.9'
+  gem 'capistrano', '~> 2.9'
   # gem 'guard', '~> 1'
   # gem 'guard-rspec', '~> 0.6'
   # gem 'guard-spork', '~> 0.5'

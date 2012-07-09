@@ -16,8 +16,8 @@ body {
 
 body, textarea, pre, input {
   font-family: 'Lato', Helvetica, sans-serif;
-  line-height: 1.8em;
-  font-size: 16px;
+  line-height: 1.6em;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -52,12 +52,12 @@ a:hover,
 }
 
 header {
-  width: 162px;
+  width: 182px;
   border-right: 1px solid #DDD;
   position: fixed;
   top: 0;
   bottom: 0;
-  padding: 20px 40px;
+  padding: 20px 30px;
 
   span {
     color: #888;
