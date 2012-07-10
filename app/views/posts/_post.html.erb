@@ -1,5 +1,6 @@
 <section id="post-<%= post.id %>">
   <div class="post contain">
+    <time>Posted <%= post.created_at.to_formatted_s(:day_month_year) %></time>
     <%- if post.external? -%>
       <h1 class="external">
         <% if @single_post %><%= link_to post.title, post.url %><% else %><%= link_to post.title, post.url %><% end %>

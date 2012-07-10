@@ -1,0 +1,8 @@
+<%
+  quotes = []
+  quotes << 'Pretend like it\'s the weekend now... and we can pretend it all the time...'
+  quotes << 'Tomorrow, we will run faster, stretch out our arms farther.... And one fine morning —'
+  quotes << 'The people who are crazy enough to think they can change the world, are the ones who do.'
+  quotes << 'So that his place shall never be with those cold and timid souls who neither know victory nor defeat.'
+%>
+<h2><% if params[:quote] %><%= quotes[params[:quote].to_i] %><% else %><%= quotes.sample %><% end %></h2>

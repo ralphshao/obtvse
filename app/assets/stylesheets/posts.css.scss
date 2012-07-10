@@ -58,15 +58,24 @@ header {
   top: 0;
   bottom: 0;
   padding: 20px 30px;
+  text-align: center;
+
+  h1.icon {
+    font-size: 150px;
+    line-height: 150px;
+    margin: 0;
+  }
 
   span {
     color: #888;
     font-weight: 500;
+    text-align: left;
 
     &.powered-by {
       position: absolute;
       bottom: 30px;
       font-size: 11px;
+      left: 30px;
     }
   }
 
@@ -95,13 +104,21 @@ header {
   margin-left: 243px;
   position: relative;
 
+  h2 {
+    color: #888;
+    display: block;
+    padding: 20px 0 30px 50px;
+    font-weight: 300;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+  }
+
   time {
     display: block;
-    padding: 20px 0 20px 50px;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 12px;
-    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    border-bottom: 2px solid #ddd;
   }
 }
 
@@ -112,9 +129,14 @@ header {
     position: relative;
   }
 
-  h1.external {
+  h1 {
     margin-top: 25px;
-    font-size: 18px;
+    font-size: 24px;
+  }
+
+  h1.external {
+    /*margin-top: 25px;
+    font-size: 18px;*/
 
     .permalink {
       margin-left: 8px;
@@ -564,8 +586,42 @@ nav.pagination {
   text-transform: uppercase;
   margin: 0;
   padding: 0;
+
+  a {
+      margin-left: 10px;
+  }
 }
 
-  nav.pagination a {
-    margin-left: 10px;
+@media all and (max-width: 640px) {
+  header {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    position: relative;
+    text-align: center;
+    width: auto;
+    ul {
+      display: none;
+    }
+    .powered-by {
+      display: none;
+    }
   }
+  #container {
+    margin-left: 0;
+    padding-left: 0;
+    h2 {
+      display: none;
+    }
+  }
+  #content {
+    section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .contain {
+    width: auto;
+  }
+}

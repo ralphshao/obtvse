@@ -5,6 +5,7 @@
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'application' %>
   <meta name="author" content="<%= CONFIG['name'] %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, minimum-scale=0.5">
   <link href="/posts.rss" rel="alternate" title="RSS" type="application/rss+xml" />
   <link href='http://fonts.googleapis.com/css?family=Lato:300,900' rel='stylesheet' type='text/css' />
 </head>
@@ -12,6 +13,7 @@
 <body class="<%= controller_name %> <%= action_name %>">
   <% unless @no_header %>
   <header>
+    <% if false %><h1 class="icon"><%= "&#97#{76 + Random.rand(8)};".html_safe %></h1><% end %>
     <h1><%= link_to CONFIG['title'], root_url %></h1>
     <span><%= CONFIG['tagline'].html_safe %></span>
     <ul>
@@ -33,16 +35,19 @@
       <li><%= link_to 'rss feed', '/posts.rss' %></li>
     </ul>
     <span class="powered-by">
+      Ralph Shao &copy; <%= Time.now.year %>
+      <br />
       Powered by <a href="http://github.com/natew/obtvse.git">Obtvse</a>
       <% if is_admin? %> &nbsp;&middot;&nbsp; <a href="/admin">Admin</a><% end %>
-  </span>
+    </span>
 
   </header>
   <% end %>
 
   <div id="container">
     <% unless @no_header %>
-      <time><% if @post && @post.created_at %>Posted <%= @post.created_at.to_formatted_s(:day_month_year) %><% else %><%= Time.now.to_formatted_s(:day_month_year) %><% end %></time>
+      <%= render :partial => 'quote' %>
+      <% if false %><time><% if @post && @post.created_at %>Posted <%= @post.created_at.to_formatted_s(:day_month_year) %><% else %><%= Time.now.to_formatted_s(:day_month_year) %><% end %></time><% end %>
     <% end %>
     <div id="content">
       <% if notice %><span class="notice"><%= notice %></span><% end %>
